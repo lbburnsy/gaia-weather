@@ -37,7 +37,7 @@ function kToF(temp) {
 /* function to change background of each block */
 function changeBackground(i, blockNumber) {
     if (i === 'Snow') {
-        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('gaia-weather/snow.jpg')"
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('snow.jpg')"
     } else if (i === 'Clouds') {
         document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('cloudy.jpg')"
     } else if (i === 'Clear') {
@@ -53,7 +53,7 @@ function changeBackground(i, blockNumber) {
 
 /* Rutland, VT */
 
-fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
+fetch('https://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
     return response.json();
 }).then(data => {
     /* Block One */
@@ -104,7 +104,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
 /* Albany, NY */
 
-fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
+fetch('https://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
     return response.json();
 }).then(data => {
     /* Block Six */
@@ -155,7 +155,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
 /* Burlington, VT */
 
-fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
+fetch('https://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441a7e240b5a38d9064fffbd95ab569d').then(response => {
     return response.json();
 }).then(data => {
     /* Block Eleven */
