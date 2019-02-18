@@ -3,6 +3,9 @@ var nameOne = document.getElementById('name-1');
 var nameTwo = document.getElementById('name-2');
 var nameThree = document.getElementById('name-3');
 
+/* Pull all blocks for background */
+var blocks = document.getElementsByClassName('block');
+
 /* Pull each block */
 var blockOne = document.getElementById('block-1');
 var blockTwo = document.getElementById('block-2');
@@ -32,7 +35,21 @@ function kToF(temp) {
 };
 
 /* function to change background of each block */
-
+function changeBackground(i, blockNumber) {
+    if (i === 'Snow') {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('snow.jpg')"
+    } else if (i === 'Clouds') {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('cloudy.jpg')"
+    } else if (i === 'Clear') {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('clear.jpg')"
+    } else if (i === 'Rain' || i === 'Drizzle') {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('rain.jpg')"
+    } else if (i === 'Thunderstorm') {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('lightning.jpg')"
+    } else {
+        document.getElementById(`${blockNumber}`).style.backgroundImage = "URL('default.jpg')"
+    }
+};
 
 /* Rutland, VT */
 
@@ -46,6 +63,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
     blockOne.firstElementChild.innerHTML = `${kToF(tempOne)}&#176`;
     blockOne.lastElementChild.innerHTML = conditionOne;
+    changeBackground(mainOne, "block-1");
 
     /* Block Two */
     tempTwo = data.list[11].main.temp
@@ -54,6 +72,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
     blockTwo.firstElementChild.innerHTML = `${kToF(tempTwo)}&#176`;
     blockTwo.lastElementChild.innerHTML = conditionTwo;
+    changeBackground(mainTwo, "block-2");
 
     /* Block Three */
     tempThree = data.list[19].main.temp
@@ -62,6 +81,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
     blockThree.firstElementChild.innerHTML = `${kToF(tempThree)}&#176`;
     blockThree.lastElementChild.innerHTML = conditionThree;
+    changeBackground(mainThree, "block-3");
 
     /* Block Four */
     tempFour = data.list[27].main.temp
@@ -70,6 +90,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
     blockFour.firstElementChild.innerHTML = `${kToF(tempFour)}&#176`;
     blockFour.lastElementChild.innerHTML = conditionFour;
+    changeBackground(mainFour, "block-4");
 
     /* Block Two */
     tempFive = data.list[35].main.temp
@@ -78,8 +99,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Rutland,us&appid=441a7e
 
     blockFive.firstElementChild.innerHTML = `${kToF(tempFive)}&#176`;
     blockFive.lastElementChild.innerHTML = conditionFive;
-
-    console.log(mainOne);
+    changeBackground(mainFive, "block-5");
 });
 
 /* Albany, NY */
@@ -94,6 +114,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
     blockSix.firstElementChild.innerHTML = `${kToF(tempSix)}&#176`;
     blockSix.lastElementChild.innerHTML = conditionSix;
+    changeBackground(mainSix, "block-6")
 
     /* Block Seven */
     tempSeven = data.list[11].main.temp
@@ -102,6 +123,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
     blockSeven.firstElementChild.innerHTML = `${kToF(tempSeven)}&#176`;
     blockSeven.lastElementChild.innerHTML = conditionSeven;
+    changeBackground(mainSeven, "block-7");
 
     /* Block Eight */
     tempEight = data.list[19].main.temp
@@ -110,6 +132,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
     blockEight.firstElementChild.innerHTML = `${kToF(tempEight)}&#176`;
     blockEight.lastElementChild.innerHTML = conditionEight;
+    changeBackground(mainEight, "block-8");
 
     /* Block Nine */
     tempNine = data.list[27].main.temp
@@ -118,6 +141,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
     blockNine.firstElementChild.innerHTML = `${kToF(tempNine)}&#176`;
     blockNine.lastElementChild.innerHTML = conditionNine;
+    changeBackground(mainNine, "block-9")
 
     /* Block Ten */
     tempTen = data.list[35].main.temp
@@ -126,9 +150,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Albany,us&appid=441a7e2
 
     blockTen.firstElementChild.innerHTML = `${kToF(tempTen)}&#176`;
     blockTen.lastElementChild.innerHTML = conditionTen;
-
-
-    console.log(data)
+    changeBackground(mainTen, "block-10");
 });
 
 /* Burlington, VT */
@@ -143,6 +165,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441
 
     blockEleven.firstElementChild.innerHTML = `${kToF(tempEleven)}&#176`;
     blockEleven.lastElementChild.innerHTML = conditionEleven;
+    changeBackground(mainEleven, "block-11");
 
     /* Block Twelve */
     tempTwelve = data.list[11].main.temp
@@ -151,6 +174,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441
 
     blockTwelve.firstElementChild.innerHTML = `${kToF(tempTwelve)}&#176`;
     blockTwelve.lastElementChild.innerHTML = conditionTwelve;
+    changeBackground(mainTwelve, "block-12");
 
     /* Block Thirteen */
     tempThirteen = data.list[19].main.temp
@@ -159,6 +183,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441
 
     blockThirteen.firstElementChild.innerHTML = `${kToF(tempThirteen)}&#176`;
     blockThirteen.lastElementChild.innerHTML = conditionThirteen;
+    changeBackground(mainThirteen, "block-13");
 
     /* Block Fourteen */
     tempFourteen = data.list[27].main.temp
@@ -167,6 +192,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441
 
     blockFourteen.firstElementChild.innerHTML = `${kToF(tempFourteen)}&#176`;
     blockFourteen.lastElementChild.innerHTML = conditionFourteen;
+    changeBackground(mainFourteen, "block-14");
 
     /* Block Fifteen */
     tempFifteen = data.list[35].main.temp
@@ -175,6 +201,6 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Burlington,us&appid=441
 
     blockFifteen.firstElementChild.innerHTML = `${kToF(tempFifteen)}&#176`;
     blockFifteen.lastElementChild.innerHTML = conditionFifteen;
-    
+    changeBackground(mainFifteen, "block-15");
 
 });
